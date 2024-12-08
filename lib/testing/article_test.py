@@ -23,10 +23,13 @@ class TestArticle:
         author = Author("Carry Bradshaw")
         magazine = Magazine("Vogue", "Fashion")
         article_1 = Article(author, magazine, "How to wear a tutu with style")
+        
+        with pytest.raises(AttributeError):
+            article_1.title = "New Title" 
 
         # comment out the next two lines if using Exceptions
-        article_1.title = 500
-        assert article_1.title == "How to wear a tutu with style"
+        #article_1.title = 500
+        #assert article_1.title == "How to wear a tutu with style"
         
         assert isinstance(article_1.title, str)
 
